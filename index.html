@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title id="page-title">Dashboard SEAMO — Summary & Detail Soal</title>
+  <title id="page-title">Dashboard SEAMO — Summary & Laporan Try Out</title>
   <style>
     /* ==========================================================================
        TOKEN WARNA PASTEL & TEMA VISUAL
@@ -68,7 +68,7 @@
     }
 
     .nav-container {
-      max-width: 1120px;
+      max-width: 1080px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -132,8 +132,8 @@
     .sub-btn {
       border: none;
       background: transparent;
-      padding: 6px 12px;
-      font-size: 0.82rem;
+      padding: 6px 14px;
+      font-size: 0.85rem;
       font-weight: 600;
       color: var(--text-muted);
       border-radius: 20px;
@@ -146,29 +146,18 @@
     }
 
     /* ==========================================================================
-       LAYOUT UTAMA & KARTU
+       LAYOUT UTAMA & KARTU (PERSISI GAMBAR PRESISI V1)
        ========================================================================== */
     main {
-      max-width: 1120px;
+      max-width: 1000px;
       margin: 20px auto;
       padding: 0 16px;
     }
 
-    .view-page {
-      display: none;
-    }
-
-    .view-page.active {
-      display: block;
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
+    .view-page { display: none; }
+    .view-page.active { display: block; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
 
     .card {
       background: var(--card-bg);
@@ -189,9 +178,9 @@
 
     .badge {
       display: inline-block;
-      padding: 3px 10px;
+      padding: 4px 12px;
       border-radius: 20px;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 600;
       white-space: nowrap;
     }
@@ -205,7 +194,6 @@
     .badge-yellow { background: var(--yellow-soft); color: var(--yellow-text); }
     .badge-gray { background: #EDF2F7; color: #4A5568; }
 
-    /* Grid Layouts */
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -222,20 +210,20 @@
 
     .stat-box {
       background: var(--bg-color);
-      padding: 14px;
+      padding: 16px;
       border-radius: var(--radius-sm);
       border: 1px solid var(--border-color);
       text-align: center;
     }
 
     .stat-val {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-weight: 700;
       line-height: 1.2;
     }
 
     .stat-label {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
       margin-top: 4px;
     }
@@ -254,7 +242,16 @@
       transform: translateY(-2px);
     }
 
-    /* Tables */
+    /* SVG Tren Graf */
+    .trend-container {
+      margin-top: 16px;
+      padding: 16px;
+      background: var(--bg-color);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    /* Tabel Performa */
     .table-responsive {
       overflow-x: auto;
       margin-top: 12px;
@@ -268,7 +265,7 @@
     }
 
     th, td {
-      padding: 10px 12px;
+      padding: 12px 14px;
       border-bottom: 1px solid var(--border-color);
       vertical-align: middle;
     }
@@ -279,7 +276,120 @@
       font-weight: 600;
     }
 
-    /* Filters Bar */
+    /* Priority & Pattern Lists */
+    .priority-list, .pattern-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .priority-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px;
+      background: var(--bg-color);
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--sky-dark);
+    }
+
+    .priority-num {
+      background: var(--sky);
+      color: var(--text-main);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* Session View Cards */
+    .session-card { border-top: 4px solid var(--sky-dark); }
+    .session-time-box {
+      background: var(--bg-color);
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      margin: 12px 0 16px 0;
+      font-size: 0.88rem;
+    }
+
+    /* Kids View */
+    .kids-hero {
+      background: var(--peach-light);
+      border: 2px solid var(--peach);
+      text-align: center;
+      padding: 24px 18px;
+    }
+
+    .kids-hero h1 {
+      font-size: 1.8rem;
+      color: var(--peach-dark);
+      margin-bottom: 6px;
+    }
+
+    .highlight-box {
+      background: #FFFFFF;
+      border: 2px dashed var(--mint-dark);
+      padding: 16px;
+      border-radius: var(--radius-md);
+      margin-top: 16px;
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+
+    .kids-mission-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .kids-mission-title {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .task-checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: var(--bg-color);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s ease;
+    }
+
+    .task-item:hover { background: var(--mint-light); }
+
+    .task-item input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--mint-dark);
+      cursor: pointer;
+    }
+
+    .task-item.completed span {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    /* Filter Bar Detail */
     .filter-bar {
       display: flex;
       flex-wrap: wrap;
@@ -316,51 +426,9 @@
       outline: none;
     }
 
-    .filter-control:focus {
-      border-color: var(--sky-dark);
-    }
-
-    /* Lists */
-    .priority-list, .pattern-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .priority-item {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 14px;
-      background: var(--bg-color);
-      border-radius: var(--radius-sm);
-      border-left: 4px solid var(--sky-dark);
-    }
-
-    .priority-num {
-      background: var(--sky);
-      color: var(--text-main);
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      flex-shrink: 0;
-    }
-
-    /* Session & Kids */
-    .session-card { border-top: 4px solid var(--sky-dark); }
-    .kids-hero {
-      background: var(--peach-light);
-      border: 2px solid var(--peach);
-      text-align: center;
-      padding: 24px 18px;
-    }
-
     @media (max-width: 640px) {
       .nav-container { flex-direction: column; align-items: stretch; }
+      .stat-val { font-size: 1.4rem; }
       .filter-bar { flex-direction: column; align-items: stretch; }
       .filter-group { width: 100%; }
     }
@@ -383,9 +451,9 @@
       </nav>
     </div>
 
-    <!-- SUB-NAVIGASI PER TRY OUT (Tampilan Orang Tua / Sesi / Tampilan Anak) -->
+    <!-- SUB-NAVIGASI PER TRY OUT -->
     <div id="sub-nav" class="sub-nav-bar">
-      <button class="sub-btn active" onclick="switchSubTab('parent')">👨‍👩‍👧 Laporan Orang Tua</button>
+      <button class="sub-btn active" onclick="switchSubTab('parent')">👨‍👩‍👧 Orang Tua</button>
       <button class="sub-btn" onclick="switchSubTab('sesi')">📅 Rencana Sesi</button>
       <button class="sub-btn" onclick="switchSubTab('anak')">✨ Tampilan Anak</button>
     </div>
@@ -394,9 +462,11 @@
   <main>
 
     <!-- ==========================================================================
-         HOMEPAGE / SUMMARY HUB
+         HOMEPAGE / SUMMARY HUB (DENGAN TREN SKOR GABUNGAN TO1-TO3 EKSPLISIT)
          ========================================================================== -->
     <section id="page-home" class="view-page active">
+      
+      <!-- HERO BANNER KESELURUHAN -->
       <div class="card" style="background: linear-gradient(135deg, #EBF4FA 0%, #E8F5F1 100%); border-color: var(--sky);">
         <div class="card-header-badge">
           <div>
@@ -408,33 +478,62 @@
 
         <div class="grid-stats">
           <div class="stat-box">
-            <div class="stat-val" style="color: var(--sky-dark);">75</div>
-            <div class="stat-label">Total Soal Evaluasi</div>
+            <div class="stat-val" style="color: var(--sky-dark);">3 / 3</div>
+            <div class="stat-label">Try Out Selesai</div>
           </div>
           <div class="stat-box">
-            <div class="stat-val" style="color: var(--green-text);">27 (36%)</div>
-            <div class="stat-label">Total Benar Kumulatif</div>
+            <div class="stat-val" style="color: var(--green-text);">42%</div>
+            <div class="stat-label">Skor Tertinggi (TO2)</div>
           </div>
           <div class="stat-box">
-            <div class="stat-val" style="color: var(--red-text);">14 (19%)</div>
-            <div class="stat-label">Total Salah Kumulatif</div>
+            <div class="stat-val" style="color: var(--peach-dark);">29%</div>
+            <div class="stat-label">Skor Terakhir (TO3)</div>
           </div>
           <div class="stat-box">
-            <div class="stat-val" style="color: var(--text-muted);">34 (45%)</div>
-            <div class="stat-label">Total Kosong Kumulatif</div>
+            <div class="stat-val" style="color: var(--mint-dark);">Working Backwards</div>
+            <div class="stat-label">Topik Paling Konsisten</div>
           </div>
         </div>
       </div>
 
+      <!-- GRAFIK TREN SKOR TRY OUT (TO1 - TO3) HASIL REVISI 1 -->
+      <div class="card">
+        <h3 style="margin-bottom: 8px;">📈 Tren Skor Try Out (TO1 - TO3)</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px;">
+          Grafik riwayat skor total berbobot resmi dari awal Try Out hingga Try Out ke-3.
+        </p>
+        <div class="trend-container">
+          <svg viewBox="0 0 500 120" style="width: 100%; max-height: 140px;">
+            <line x1="50" y1="20" x2="450" y2="20" stroke="#E2E8F0" stroke-dasharray="4" />
+            <line x1="50" y1="60" x2="450" y2="60" stroke="#E2E8F0" stroke-dasharray="4" />
+            <line x1="50" y1="100" x2="450" y2="100" stroke="#E2E8F0" stroke-dasharray="4" />
+            
+            <polyline fill="none" stroke="var(--sky-dark)" stroke-width="3" points="80,80 250,50 420,90" />
+            
+            <circle cx="80" cy="80" r="6" fill="var(--sky-dark)" />
+            <text x="80" y="65" font-size="12" text-anchor="middle" font-weight="bold" fill="var(--text-main)">33% (TO1)</text>
+
+            <circle cx="250" cy="50" r="6" fill="var(--green-text)" />
+            <text x="250" y="35" font-size="12" text-anchor="middle" font-weight="bold" fill="var(--green-text)">42% (TO2)</text>
+
+            <circle cx="420" cy="90" r="6" fill="var(--red-text)" />
+            <text x="420" y="112" font-size="12" text-anchor="middle" font-weight="bold" fill="var(--red-text)">29% (TO3)</text>
+          </svg>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 10px;">
+            ⚠️ <strong>Catatan Tren:</strong> Penurunan skor pada TO3 terkonsentrasi di <strong>Bagian A (No. 1–10)</strong>, bukan penurunan merata di seluruh topik.
+          </p>
+        </div>
+      </div>
+
       <!-- KARTU NAVIGASI TRY OUT -->
-      <h3 style="margin-bottom: 12px;">📌 Pilih Laporan Try Out atau Analisis Detail</h3>
+      <h3 style="margin-bottom: 12px;">📌 Pilih Laporan Detail Per Try Out</h3>
       <div class="grid-3">
         <div class="to-card" onclick="switchMainPage('to1')">
           <div class="card-header-badge" style="margin-bottom: 8px;">
             <strong style="font-size: 1.05rem;">Try Out 1 (Set 10)</strong>
             <span class="badge badge-sky">Skor: 33%</span>
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">8 Benar, 6 Salah, 11 Kosong (SEAMO 2016). Perlu penguatan pada topik Logic & Counting.</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">8 Benar, 6 Salah, 11 Kosong (SEAMO 2016). Evaluasi awal baseline.</p>
         </div>
 
         <div class="to-card" onclick="switchMainPage('to2')">
@@ -454,172 +553,561 @@
         </div>
       </div>
 
-      <!-- BANNER DIRECT LINK DETAIL SOAL -->
-      <div class="card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-left: 5px solid var(--purple-dark);">
-        <div>
-          <h4 style="font-size: 1.05rem;">🔍 Ingin Bedah Soal Satu Per Satu?</h4>
-          <p style="font-size: 0.88rem; color: var(--text-muted);">Lihat 75 data soal lengkap beserta tingkat kesulitan, sub-topik, dan status jawaban.</p>
+      <!-- MATRIKS PERFORMA PER TOPIK KESELURUHAN -->
+      <div class="card">
+        <h3 style="margin-bottom: 12px;">📊 Matriks Performa Per Topik (TO1 vs TO2 vs TO3)</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Topik</th>
+                <th>TO1 (Set 10)</th>
+                <th>TO2 (Set 3)</th>
+                <th>TO3 (Set 4)</th>
+                <th>Status & Tren</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Working Backwards</strong></td>
+                <td>100% (n=1)</td>
+                <td>20% (1/5)</td>
+                <td>50% (2/4)</td>
+                <td><span class="badge badge-green">🟢 Kuat Akurasi</span> 100% benar jika dicoba.</td>
+              </tr>
+              <tr>
+                <td><strong>Logic</strong></td>
+                <td>0% (0/3)</td>
+                <td>100% (2/2)</td>
+                <td>25% (2/8)</td>
+                <td><span class="badge badge-red">🔴 Rawan Bagian A</span> Perlu trik jebakan & timbangan.</td>
+              </tr>
+              <tr>
+                <td><strong>Multiplication</strong></td>
+                <td>100%</td>
+                <td>50% (2/4)</td>
+                <td>0% (0/2)</td>
+                <td><span class="badge badge-peach">🟠 Butuh Refresh</span> Dikosongkan total di TO3.</td>
+              </tr>
+              <tr>
+                <td><strong>Counting</strong></td>
+                <td>20%</td>
+                <td>100% (1/1)</td>
+                <td>25% (1/4)</td>
+                <td><span class="badge badge-yellow">🟡 Celah Kombinasi</span> Bentuk 2D kuat; kombinasi 0%.</td>
+              </tr>
+              <tr>
+                <td><strong>IQ</strong></td>
+                <td>-</td>
+                <td>60% (3/5)</td>
+                <td>0% (0/1)</td>
+                <td><span class="badge badge-purple">🟣 Rotasi 3D</span> Kuat di dasar, rawan di 3D.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <button class="nav-btn" style="background: var(--purple-dark); color: white; padding: 10px 18px;" onclick="switchMainPage('detail')">Buka Detail 75 Soal ➔</button>
       </div>
     </section>
 
     <!-- ==========================================================================
-         VIEW 1: TRY OUT 1 (SET 10)
+         TRY OUT 3 (SET 4) — STRUCTURAL EXACT MATCH SCREENSHOTS v1 (REVISI 2)
+         ========================================================================== -->
+    <section id="page-to3" class="view-page">
+      
+      <!-- TO3: TAB ORANG TUA (EXACT LIKE IMAGE_C6FDB0.JPG) -->
+      <div id="to3-parent" class="tab-content active">
+        <!-- HEADER CARD -->
+        <div class="card">
+          <div class="card-header-badge">
+            <div>
+              <h2>Laporan Try Out SEAMO — Minggu Ke-3 (Set 4)</h2>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">13 September 2026</p>
+            </div>
+            <span class="badge badge-peach">⏳ H-27 National Round (10 Okt 2026)</span>
+          </div>
+
+          <div class="grid-stats">
+            <div class="stat-box"><div class="stat-val" style="color: var(--sky-dark);">29 / 100</div><div class="stat-label">Skor Berbobot</div></div>
+            <div class="stat-box"><div class="stat-val" style="color: var(--green-text);">7</div><div class="stat-label">Soal Benar</div></div>
+            <div class="stat-box"><div class="stat-val" style="color: var(--red-text);">6</div><div class="stat-label">Soal Salah</div></div>
+            <div class="stat-box"><div class="stat-val" style="color: var(--text-muted);">12</div><div class="stat-label">Soal Kosong</div></div>
+          </div>
+
+          <!-- TREN SKOR SVG IN PARENT CARD -->
+          <div class="trend-container">
+            <h4 style="margin-bottom: 8px;">📈 Tren Skor Try Out (TO1 - TO3)</h4>
+            <svg viewBox="0 0 400 90" style="width: 100%; max-height: 110px;">
+              <line x1="40" y1="15" x2="360" y2="15" stroke="#E2E8F0" stroke-dasharray="4" />
+              <line x1="40" y1="45" x2="360" y2="45" stroke="#E2E8F0" stroke-dasharray="4" />
+              <line x1="40" y1="75" x2="360" y2="75" stroke="#E2E8F0" stroke-dasharray="4" />
+              <polyline fill="none" stroke="var(--sky-dark)" stroke-width="3" points="60,60 200,40 340,68" />
+              <circle cx="60" cy="60" r="5" fill="var(--sky-dark)" />
+              <text x="60" y="48" font-size="11" text-anchor="middle" fill="var(--text-main)">33% (TO1)</text>
+              <circle cx="200" cy="40" r="5" fill="var(--sky-dark)" />
+              <text x="200" y="28" font-size="11" text-anchor="middle" fill="var(--text-main)">42% (TO2)</text>
+              <circle cx="340" cy="68" r="5" fill="var(--red-text)" />
+              <text x="340" y="86" font-size="11" text-anchor="middle" fill="var(--red-text)" font-weight="bold">29% (TO3)</text>
+            </svg>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">
+              ⚠️ <strong>Catatan Tren:</strong> Penurunan skor minggu ini terkonsentrasi di Bagian A (No. 1-10), bukan penurunan merata di seluruh topik.
+            </p>
+          </div>
+        </div>
+
+        <!-- PERFORMA PER TOPIK TABLE -->
+        <div class="card">
+          <h3 style="margin-bottom: 12px;">📊 Performa per Topik</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Topik</th><th>Benar</th><th>Salah</th><th>Kosong</th><th>Catatan Singkat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Working Backwards</strong></td><td>2</td><td>0</td><td>2</td>
+                  <td><span class="badge badge-green">🟢 Mantap</span> 2/2 yang dicoba benar (termasuk Bagian C)</td>
+                </tr>
+                <tr>
+                  <td><strong>Logic</strong></td><td>2</td><td>3</td><td>3</td>
+                  <td><span class="badge badge-red">🔴 Rawan</span> 3 salah di Bagian A; perlu trik jebakan & timbangan</td>
+                </tr>
+                <tr>
+                  <td><strong>Counting</strong></td><td>1</td><td>1</td><td>2</td>
+                  <td><span class="badge badge-yellow">🟡 Perlu Penguatan</span> Kombinasi/cara 0%; bentuk 2D makin kuat</td>
+                </tr>
+                <tr>
+                  <td><strong>Multiplication</strong></td><td>0</td><td>0</td><td>2</td>
+                  <td><span class="badge badge-peach">🟠 Dikosongkan</span> Belum dilatih ulang sejak TO1</td>
+                </tr>
+                <tr>
+                  <td><strong>Queuing Problem</strong></td><td>0</td><td>1</td><td>0</td>
+                  <td>Salah — rawan hitung "jumlah di antara" (off-by-one)</td>
+                </tr>
+                <tr>
+                  <td><strong>IQ</strong></td><td>0</td><td>1</td><td>0</td>
+                  <td>Salah di tipe rotasi — konsisten dengan TO2</td>
+                </tr>
+                <tr>
+                  <td><strong>Number Pattern</strong></td><td>1</td><td>0</td><td>1</td>
+                  <td>Deret bertingkat tetap kuat; subtipe palindrom baru kosong</td>
+                </tr>
+                <tr>
+                  <td><strong>Sum of Sequence</strong></td><td>1</td><td>0</td><td>0</td>
+                  <td>Solid</td>
+                </tr>
+                <tr>
+                  <td><strong>Time & Operations</strong></td><td>0</td><td>0</td><td>2</td>
+                  <td>Dikosongkan (kemungkinan waktu habis)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- POLA KESALAHAN UTAMA -->
+        <div class="card">
+          <h3 style="margin-bottom: 12px;">🔍 Pola Kesalahan Utama</h3>
+          <div class="pattern-list">
+            <div class="priority-item" style="border-left-color: var(--red-text);">
+              <div><strong>Kesalahan Menumpuk di Bagian A:</strong> No.1–10 hanya 1/10 benar. Bagian A yang seharusnya paling mudah malah lebih rendah dari Bagian B (5/10). Ini prioritas utama untuk dibereskan.</div>
+            </div>
+            <div class="priority-item" style="border-left-color: var(--peach-dark);">
+              <div><strong>Logic (Bukan Ceroboh Murni):</strong> 3 dari 5 kesalahan Bagian A ada di Logic (jebakan & timbangan). Triknya sederhana dan cepat diajarkan.</div>
+            </div>
+            <div class="priority-item" style="border-left-color: var(--green-text);">
+              <div><strong>Kabar Baik — Working Backwards:</strong> 2/2 soal yang dikerjakan benar 100%, termasuk 1 soal Bagian C tersulit. Bukti nyata sesi latihan minggu lalu sukses!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 TOPIK PRIORITAS MINGGU INI -->
+        <div class="card">
+          <h3 style="margin-bottom: 12px;">🎯 3 Topik Prioritas Minggu Ini</h3>
+          <div class="priority-list">
+            <div class="priority-item">
+              <div class="priority-num">1</div>
+              <div>
+                <strong>Logic</strong> (54/245 di bank soal)
+                <p style="font-size: 0.88rem; color: var(--text-muted);">Kesalahan terbanyak di Bagian A. Ada trik konkret (jebakan & timbangan) yang bisa langsung dikuasai.</p>
+              </div>
+            </div>
+            <div class="priority-item">
+              <div class="priority-num">2</div>
+              <div>
+                <strong>Counting</strong> (30/245 di bank soal)
+                <p style="font-size: 0.88rem; color: var(--text-muted);">Gap kombinasi/cara sudah 3x try out berturut-turut 0%. Dibereskan dengan metode sistematis.</p>
+              </div>
+            </div>
+            <div class="priority-item">
+              <div class="priority-num">3</div>
+              <div>
+                <strong>Multiplication</strong> (22/245 di bank soal)
+                <p style="font-size: 0.88rem; color: var(--text-muted);">Dikosongkan total minggu ini karena sudah 2 siklus tanpa latihan ulang.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATATAN ORANG TUA -->
+        <div class="card" style="background: var(--mint-light); border-color: var(--mint);">
+          <h3 style="color: var(--mint-dark); margin-bottom: 8px;">💬 Catatan Pendampingan Orang Tua</h3>
+          <ul style="padding-left: 20px; font-size: 0.92rem; display: flex; flex-direction: column; gap: 8px;">
+            <li><strong>Rayakan Working Backwards dulu:</strong> Puji eksplisit: <em>"Soal budget yang susah minggu lalu, sekarang kamu kerjain sendiri dan benar!"</em></li>
+            <li><strong>Eksplorasi dulu:</strong> Untuk trik jebakan di Sesi 1, biarkan anak mencoba menemukan pola dengan angka kecil sebelum memberi tahu triknya.</li>
+            <li><strong>Cegah Pola Menghindar:</strong> Jika di Sesi 3 anak ingin melompati soal Multiplication, ingatkan pelan: <em>"Coba dulu 1 menit, baru boleh bilang susah."</em> Batasi sesi maks 25-30 menit jika anak tampak lelah.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TO3: TAB RENCANA SESI (EXACT LIKE IMAGE_C6FDCE.JPG) -->
+      <div id="to3-sesi" class="tab-content">
+        <h2 style="margin-bottom: 16px;">📅 Rencana 3 Sesi Pembahasan Minggu Ini</h2>
+
+        <!-- SESI 1 -->
+        <div class="card session-card">
+          <div class="card-header-badge">
+            <h3>Sesi 1: Logic — Jebakan Berpikir & Timbangan</h3>
+            <span class="badge badge-sky">Prioritas 1</span>
+          </div>
+          <div class="session-time-box">
+            ⏱️ <strong>Struktur Sesi (35-45 Menit):</strong><br/>
+            • 5-10 mnt: Review trik jebakan potongan/lantai & trik eliminasi timbangan.<br/>
+            • 15-25 mnt: Latihan terbimbing.<br/>
+            • 5-10 mnt: Cek mandiri.
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead><tr><th>Set</th><th>No</th><th>Sub-topik</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Set 4</td><td>4</td><td>Jebakan (lantai) — review kesalahan TO3</td><td><span class="badge badge-red">Penting</span></td></tr>
+                <tr><td>Set 10</td><td>3</td><td>Jebakan (koin segitiga & sudut bersama)</td><td><span class="badge badge-red">Penting</span></td></tr>
+                <tr><td>Set 4</td><td>18</td><td>Jebakan (bunga di sudut sapu tangan)</td><td><span class="badge badge-red">Penting</span></td></tr>
+                <tr><td>Set 4</td><td>1</td><td>Timbangan 3 persamaan (A+B, A+C, B+C)</td><td><span class="badge badge-red">Penting</span></td></tr>
+                <tr><td>Set 3</td><td>22</td><td>Timbangan (massa nanas) — cek mandiri</td><td><span class="badge badge-sky">Tambahan</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SESI 2 -->
+        <div class="card session-card">
+          <div class="card-header-badge">
+            <h3>Sesi 2: Counting — Kombinasi & Cara</h3>
+            <span class="badge badge-mint">Prioritas 2</span>
+          </div>
+          <div class="session-time-box">
+            ⏱️ <strong>Struktur Sesi (35-45 Menit):</strong><br/>
+            • 5-10 mnt: Review konsep "mulai dari kasus kecil".<br/>
+            • 15-25 mnt: Latihan terbimbing.<br/>
+            • 5-10 mnt: Cek mandiri.
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead><tr><th>Set</th><th>No</th><th>Sub-topik</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Set 4</td><td>5</td><td>Maks. potongan kue (3 sayatan)</td><td><span class="badge badge-red">Penting</span></td></tr>
+                <tr><td>Set 10</td><td>21</td><td>Maks. potongan pizza (3 sayatan varian)</td><td><span class="badge badge-red">Penting</span></td></tr>
+                <tr><td>Set 10</td><td>12</td><td>Bagi jeruk ke 3 keranjang (casework)</td><td><span class="badge badge-red">Penting</span></td></tr>
+                <tr><td>Set 10</td><td>18</td><td>Cara bayar pas tanpa kembalian</td><td><span class="badge badge-red">Penting</span></td></tr>
+                <tr><td>Set 10</td><td>16</td><td>Minimum lemparan skor 100</td><td><span class="badge badge-sky">Tambahan</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SESI 3 -->
+        <div class="card session-card">
+          <div class="card-header-badge">
+            <h3>Sesi 3: Multiplication — Operasi Tersembunyi</h3>
+            <span class="badge badge-peach">Prioritas 3</span>
+          </div>
+          <div class="session-time-box">
+            ⏱️ <strong>Struktur Sesi (35-45 Menit):</strong><br/>
+            • 5-10 mnt: Checklist "coba tambah/kurang dulu, lalu coba kali".<br/>
+            • 15-25 mnt: Latihan terbimbing.<br/>
+            • 5-10 mnt: Cek mandiri.
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead><tr><th>Set</th><th>No</th><th>Sub-topik</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Set 4</td><td>13</td><td>Operasi custom ⊕</td><td><span class="badge badge-red">Penting</span></td></tr>
+                <tr><td>Set 3</td><td>5</td><td>Operasi custom ⊙</td><td><span class="badge badge-red">Penting</span></td></tr>
+                <tr><td>Set 4</td><td>24</td><td>Formula diagram diagonal×diagonal</td><td><span class="badge badge-red">Penting</span></td></tr>
+                <tr><td>Set 3</td><td>1</td><td>Pola kotak angka — cek mandiri</td><td><span class="badge badge-red">Penting</span></td></tr>
+                <tr><td>Set 10</td><td>1</td><td>Pola kotak-lingkaran — pemanasan</td><td><span class="badge badge-sky">Tambahan</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TO3: TAB TAMPILAN ANAK (EXACT LIKE IMAGE_C6FDEB.JPG) -->
+      <div id="to3-anak" class="tab-content">
+        <div class="card kids-hero">
+          <h1>Halo Juara! 🌟</h1>
+          <p style="font-size: 1.1rem; color: var(--text-main);">Kamu makin dekat jadi ahli matematika SEAMO!</p>
+          
+          <div class="highlight-box">
+            🎉 <strong>Sorotan Minggu Ini:</strong><br/>
+            <em>"Soal budget yang susah minggu lalu, sekarang kamu kerjain sendiri dan benar! Topik Working Backwards kamu TOP banget! 🚀"</em>
+          </div>
+
+          <div style="margin-top: 16px;">
+            <span class="badge badge-peach" style="font-size: 1rem; padding: 6px 16px;">
+              ⏳ 27 Hari Lagi Menuju National Round!
+            </span>
+          </div>
+        </div>
+
+        <h3 style="margin: 24px 0 12px 0;">🎯 Misi Minggu Ini (Centang kalau sudah selesai!):</h3>
+
+        <!-- MISI 1 -->
+        <div class="kids-mission-card">
+          <div class="kids-mission-title">
+            <span>🧩</span> <strong>Misi 1: Trik Detektif (Logic)</strong>
+          </div>
+          <ul class="task-checklist">
+            <li class="task-item" onclick="toggleTask(this, 'to3_m1_t1')">
+              <input type="checkbox" id="to3_m1_t1" onclick="event.stopPropagation(); toggleTask(this.parentElement, 'to3_m1_t1')" />
+              <span>Set 4 No. 4 — Rahasia hitung lantai tempat tinggal</span>
+            </li>
+            <li class="task-item" onclick="toggleTask(this, 'to3_m1_t2')">
+              <input type="checkbox" id="to3_m1_t2" onclick="event.stopPropagation(); toggleTask(this.parentElement, 'to3_m1_t2')" />
+              <span>Set 10 No. 3 — Trik jebakan koin & sudut</span>
+            </li>
+            <li class="task-item" onclick="toggleTask(this, 'to3_m1_t3')">
+              <input type="checkbox" id="to3_m1_t3" onclick="event.stopPropagation(); toggleTask(this.parentElement, 'to3_m1_t3')" />
+              <span>Set 4 No. 18 — Jebakan bunga di sudut sapu tangan</span>
+            </li>
+            <li class="task-item" onclick="toggleTask(this, 'to3_m1_t4')">
+              <input type="checkbox" id="to3_m1_t4" onclick="event.stopPropagation(); toggleTask(this.parentElement, 'to3_m1_t4')" />
+              <span>Set 4 No. 1 & Set 3 No. 22 — Detektif timbangan</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- MISI 2 -->
+        <div class="kids-mission-card">
+          <div class="kids-mission-title">
+            <span>📦</span> <strong>Misi 2: Petualangan Menghitung (Counting)</strong>
+          </div>
+          <ul class="task-checklist">
+            <li class="task-item" onclick="toggleTask(this, 'to3_m2_t1')">
+              <input type="checkbox" id="to3_m2_t1" onclick="event.stopPropagation(); toggleTask(this.parentElement, 'to3_m2_t1')" />
+              <span>Set 4 No. 5 & Set 10 No. 21 — Potong kue & pizza paling banyak</span>
+            </li>
+            <li class="task-item" onclick="toggleTask(this, 'to3_m2_t2')">
+              <input type="checkbox" id="to3_m2_t2" onclick="event.stopPropagation(); toggleTask(this.parentElement, 'to3_m2_t2')" />
+              <span>Set 10 No. 12 — Membagi jeruk ke keranjang</span>
+            </li>
+            <li class="task-item" onclick="toggleTask(this, 'to3_m2_t3')">
+              <input type="checkbox" id="to3_m2_t3" onclick="event.stopPropagation(); toggleTask(this.parentElement, 'to3_m2_t3')" />
+              <span>Set 10 No. 18 — Trik bayar uang pas</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- MISI 3 -->
+        <div class="kids-mission-card">
+          <div class="kids-mission-title">
+            <span>⚡</span> <strong>Misi 3: Kode Perkalian Rahasia (Multiplication)</strong>
+          </div>
+          <ul class="task-checklist">
+            <li class="task-item" onclick="toggleTask(this, 'to3_m3_t1')">
+              <input type="checkbox" id="to3_m3_t1" onclick="event.stopPropagation(); toggleTask(this.parentElement, 'to3_m3_t1')" />
+              <span>Set 4 No. 13 & Set 3 No. 5 — Pecahkan simbol ajaib ⊕ & ⊙</span>
+            </li>
+            <li class="task-item" onclick="toggleTask(this, 'to3_m3_t2')">
+              <input type="checkbox" id="to3_m3_t2" onclick="event.stopPropagation(); toggleTask(this.parentElement, 'to3_m3_t2')" />
+              <span>Set 4 No. 24 — Rahasia diagram silang</span>
+            </li>
+            <li class="task-item" onclick="toggleTask(this, 'to3_m3_t3')">
+              <input type="checkbox" id="to3_m3_t3" onclick="event.stopPropagation(); toggleTask(this.parentElement, 'to3_m3_t3')" />
+              <span>Set 3 No. 1 & Set 10 No. 1 — Tantangan kotak angka</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TRY OUT 1 (SET 10) — FULL STRUCTURED VIEW
          ========================================================================== -->
     <section id="page-to1" class="view-page">
       <div id="to1-parent" class="tab-content active">
         <div class="card">
           <div class="card-header-badge">
             <div>
-              <h2>Laporan Try Out 1 (Set 10 — SEAMO 2016)</h2>
-              <p style="color: var(--text-muted); font-size: 0.9rem;">Evaluasi Awal Baseline</p>
+              <h2>Laporan Try Out SEAMO — Minggu Ke-1 (Set 10)</h2>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">SEAMO 2016 Paper A</p>
             </div>
-            <span class="badge badge-sky">Skor: 33%</span>
+            <span class="badge badge-sky">Skor: 33/100 (33%)</span>
           </div>
-          <p>
-            Try Out pertama digunakan sebagai baseline evaluasi. Ditemukan gap terbesar ada di topik <strong>Logic (0%)</strong> dan <strong>Counting (20%)</strong>. Namun, topik <strong>Multiplication</strong> dan <strong>Number Pattern</strong> menunjukkan performa awal yang baik.
-          </p>
-          <div style="margin-top: 14px;">
-            <button class="sub-btn" style="background: var(--sky-light); color: var(--sky-dark);" onclick="filterAndGoDetail('10')">🔍 Lihat 25 Soal Set 10 di Halaman Detail ➔</button>
+
+          <div class="grid-stats">
+            <div class="stat-box"><div class="stat-val" style="color: var(--sky-dark);">33 / 100</div><div class="stat-label">Skor Berbobot</div></div>
+            <div class="stat-box"><div class="stat-val" style="color: var(--green-text);">8</div><div class="stat-label">Soal Benar</div></div>
+            <div class="stat-box"><div class="stat-val" style="color: var(--red-text);">6</div><div class="stat-label">Soal Salah</div></div>
+            <div class="stat-box"><div class="stat-val" style="color: var(--text-muted);">11</div><div class="stat-label">Soal Kosong</div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom: 12px;">📊 Performa per Topik (TO1)</h3>
+          <div class="table-responsive">
+            <table>
+              <thead><tr><th>Topik</th><th>Benar</th><th>Salah</th><th>Kosong</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Multiplication</strong></td><td>2</td><td>0</td><td>0</td><td><span class="badge badge-green">🟢 100% Mahir</span></td></tr>
+                <tr><td><strong>Number Pattern</strong></td><td>3</td><td>0</td><td>0</td><td><span class="badge badge-green">🟢 100% Mahir</span></td></tr>
+                <tr><td><strong>Working Backwards</strong></td><td>1</td><td>0</td><td>2</td><td><span class="badge badge-sky">🔵 Cukup</span> (100% benar jika dicoba)</td></tr>
+                <tr><td><strong>Counting</strong></td><td>1</td><td>3</td><td>1</td><td><span class="badge badge-yellow">🟡 20% Rawan</span></td></tr>
+                <tr><td><strong>Logic</strong></td><td>0</td><td>0</td><td>3</td><td><span class="badge badge-red">🔴 0% Kosong Total</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom: 12px;">🎯 3 Topik Prioritas Dilatih Setelah TO1</h3>
+          <div class="priority-list">
+            <div class="priority-item"><div class="priority-num">1</div><div><strong>IQ (5 Soal di Set 3):</strong> Bobot terbesar, perlu baseline exposure.</div></div>
+            <div class="priority-item"><div class="priority-num">2</div><div><strong>Working Backwards (5 Soal di Set 3):</strong> ROI tinggi untuk naik ke sempurna.</div></div>
+            <div class="priority-item"><div class="priority-num">3</div><div><strong>Multiplication (4 Soal di Set 3):</strong> Penguatan konsep operasi angka.</div></div>
           </div>
         </div>
       </div>
+
       <div id="to1-sesi" class="tab-content">
         <div class="card session-card">
           <h3>Sesi 1: IQ (Pola Gambar & Rotasi)</h3>
-          <p style="margin-top: 6px; font-size: 0.9rem;">Soal Rekomendasi: Set 9 No.4, Set 5 No.17, Set 9 No.5, Set 8 No.6</p>
+          <p style="font-size: 0.9rem; margin-top: 6px;">Rekomendasi Soal: Set 9 No.4, Set 5 No.17, Set 9 No.5, Set 8 No.6 (Cek Mandiri)</p>
+        </div>
+        <div class="card session-card">
+          <h3>Sesi 2: Working Backwards</h3>
+          <p style="font-size: 0.9rem; margin-top: 6px;">Rekomendasi Soal: Set 10 No.5, Set 4 No.14, Set 10 No.19, Set 6 No.18 (Cek Mandiri)</p>
+        </div>
+        <div class="card session-card">
+          <h3>Sesi 3: Multiplication</h3>
+          <p style="font-size: 0.9rem; margin-top: 6px;">Rekomendasi Soal: Set 10 No.1, Set 6 No.11, Set 5 No.8</p>
         </div>
       </div>
+
       <div id="to1-anak" class="tab-content">
         <div class="card kids-hero">
           <h1>Misi Try Out 1 🚀</h1>
-          <p>Latihan awal untuk membiasakan diri dengan pola soal SEAMO!</p>
+          <p>Latihan awal membiasakan diri dengan pola soal SEAMO!</p>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         VIEW 2: TRY OUT 2 (SET 3)
+         TRY OUT 2 (SET 3) — FULL STRUCTURED VIEW
          ========================================================================== -->
     <section id="page-to2" class="view-page">
       <div id="to2-parent" class="tab-content active">
         <div class="card">
           <div class="card-header-badge">
             <div>
-              <h2>Laporan Try Out 2 (Set 3 — SEAMO 2024 Paper A)</h2>
-              <p style="color: var(--text-muted); font-size: 0.9rem;">H-34 Hari Menuju National Round</p>
+              <h2>Laporan Try Out SEAMO — Minggu Ke-2 (Set 3)</h2>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">SEAMO 2024 Paper A</p>
             </div>
             <span class="badge badge-green">Skor: 42/100 (42%)</span>
           </div>
-          <p style="font-size: 0.9rem;">
-            🎉 <strong>Lompatan Besar Logic:</strong> Topik Logic naik dari 0% di TO1 menjadi 100% (2/2 benar) di TO2, termasuk soal timbangan Section C!
-          </p>
-          <div style="margin-top: 14px;">
-            <button class="sub-btn" style="background: var(--mint-light); color: var(--mint-dark);" onclick="filterAndGoDetail('3')">🔍 Lihat 25 Soal Set 3 di Halaman Detail ➔</button>
+
+          <div class="grid-stats">
+            <div class="stat-box"><div class="stat-val" style="color: var(--green-text);">42 / 100</div><div class="stat-label">Skor Berbobot</div></div>
+            <div class="stat-box"><div class="stat-val" style="color: var(--green-text);">10</div><div class="stat-label">Soal Benar</div></div>
+            <div class="stat-box"><div class="stat-val" style="color: var(--red-text);">2</div><div class="stat-label">Soal Salah</div></div>
+            <div class="stat-box"><div class="stat-val" style="color: var(--text-muted);">13</div><div class="stat-label">Soal Kosong</div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom: 12px;">📊 Performa per Topik (TO2)</h3>
+          <div class="table-responsive">
+            <table>
+              <thead><tr><th>Topik</th><th>Benar</th><th>Salah</th><th>Kosong</th><th>Catatan</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Logic</strong></td><td>2</td><td>0</td><td>0</td><td><span class="badge badge-green">🟢 100% Lompatan Besar</span></td></tr>
+                <tr><td><strong>IQ</strong></td><td>3</td><td>1</td><td>1</td><td><span class="badge badge-purple">🟣 60% Solid</span> (1 salah rotasi 3D)</td></tr>
+                <tr><td><strong>Multiplication</strong></td><td>2</td><td>1</td><td>1</td><td><span class="badge badge-sky">🔵 50%</span> (Salah di pola a²−b)</td></tr>
+                <tr><td><strong>Working Backwards</strong></td><td>1</td><td>0</td><td>4</td><td><span class="badge badge-yellow">🟡 20%</span> (4/5 dikosongkan)</td></tr>
+                <tr><td><strong>Number Pattern</strong></td><td>0</td><td>0</td><td>3</td><td><span class="badge badge-red">🔴 0%</span> (Subtipe grid 2D baru)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom: 12px;">🔍 Pola Kesalahan Utama TO2</h3>
+          <div class="pattern-list">
+            <div class="priority-item" style="border-left-color: var(--sky-dark);">
+              <div><strong>Hanya 2 Soal Salah:</strong> No.5 Multiplication (pola a²−b) & No.16 IQ (rotasi 3D).</div>
+            </div>
+            <div class="priority-item" style="border-left-color: var(--peach-dark);">
+              <div><strong>13 Soal Kosong Tersebar:</strong> Tersebar di Section A (5/10), B (6/10), dan C (2/5). Indikasi menghidari soal asing.</div>
+            </div>
           </div>
         </div>
       </div>
+
       <div id="to2-sesi" class="tab-content">
         <div class="card session-card">
           <h3>Sesi 1: Working Backwards</h3>
           <p style="font-size: 0.9rem; margin-top: 4px;">Rekomendasi Soal: Set 3 No.2, No.8, No.9, No.14 & Set 8 No.8</p>
         </div>
+        <div class="card session-card">
+          <h3>Sesi 2: Number Pattern (Grid & Array 2D)</h3>
+          <p style="font-size: 0.9rem; margin-top: 4px;">Rekomendasi Soal: Set 10 No.8, Set 3 No.10, No.19, Set 6 No.15, Set 8 No.15</p>
+        </div>
+        <div class="card session-card">
+          <h3>Sesi 3: Multiplication (Pola Kuadrat)</h3>
+          <p style="font-size: 0.9rem; margin-top: 4px;">Rekomendasi Soal: Set 3 No.5, No.1, Set 9 No.3, Set 6 No.19, Set 4 No.13</p>
+        </div>
       </div>
+
       <div id="to2-anak" class="tab-content">
         <div class="card kids-hero">
           <h1>Misi Try Out 2 ⭐</h1>
-          <p>Nilaimu naik pesat! Terus tingkatkan keberanian mencoba soal baru!</p>
+          <p>Nilaimu naik pesat ke 42%! Terus tingkatkan keberanian mencoba soal baru!</p>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         VIEW 3: TRY OUT 3 (SET 4)
-         ========================================================================== -->
-    <section id="page-to3" class="view-page">
-      <div id="to3-parent" class="tab-content active">
-        <div class="card">
-          <div class="card-header-badge">
-            <div>
-              <h2>Laporan Try Out 3 (Set 4 — SEAMO 2017)</h2>
-              <p style="color: var(--text-muted); font-size: 0.9rem;">13 September 2026</p>
-            </div>
-            <span class="badge badge-peach">⏳ H-27 National Round</span>
-          </div>
-          <p style="font-size: 0.9rem;">
-            Penurunan skor minggu ini terkonsentrasi di Bagian A. Working Backwards 100% benar pada soal yang dicoba.
-          </p>
-          <div style="margin-top: 14px;">
-            <button class="sub-btn" style="background: var(--peach-light); color: var(--peach-dark);" onclick="filterAndGoDetail('4')">🔍 Lihat 25 Soal Set 4 di Halaman Detail ➔</button>
-          </div>
-        </div>
-      </div>
-      <div id="to3-sesi" class="tab-content">
-        <div class="card session-card">
-          <h3>Sesi 1: Logic — Jebakan Berpikir & Timbangan</h3>
-          <p style="font-size: 0.9rem;">Soal Rekomendasi: Set 4 No.4, Set 10 No.3, Set 4 No.18, Set 4 No.1</p>
-        </div>
-      </div>
-      <div id="to3-anak" class="tab-content">
-        <div class="card kids-hero">
-          <h1>Halo Juara! 🌟</h1>
-          <p>Soal Working Backwards kamu TOP banget! 🚀</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         VIEW 4: HALAMAN DETAIL 75 SOAL (ALL SETS DETAILED TABLE)
+         VIEW 4: DETAIL 75 SOAL (FILTERABLE TABLE)
          ========================================================================== -->
     <section id="page-detail" class="view-page">
       <div class="card">
         <div class="card-header-badge">
           <div>
             <h2>📋 Detail Performa Soal Per Set</h2>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">Analisis mendalam 75 soal dari Set 10 (2016), Set 3 (2024), dan Set 4 (2017)</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Analisis 75 soal lengkap dari Set 10 (2016), Set 3 (2024), dan Set 4 (2017)</p>
           </div>
         </div>
 
-        <!-- STATS SUMMARY HASIL FILTER -->
         <div class="grid-stats" id="detail-stats-bar">
-          <div class="stat-box">
-            <div class="stat-val" id="stat-total-count">0</div>
-            <div class="stat-label">Soal Ditampilkan</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-val" style="color: var(--green-text);" id="stat-benar-count">0</div>
-            <div class="stat-label">Benar</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-val" style="color: var(--red-text);" id="stat-salah-count">0</div>
-            <div class="stat-label">Salah</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-val" style="color: var(--text-muted);" id="stat-kosong-count">0</div>
-            <div class="stat-label">Kosong</div>
-          </div>
+          <div class="stat-box"><div class="stat-val" id="stat-total-count">0</div><div class="stat-label">Soal Ditampilkan</div></div>
+          <div class="stat-box"><div class="stat-val" style="color: var(--green-text);" id="stat-benar-count">0</div><div class="stat-label">Benar</div></div>
+          <div class="stat-box"><div class="stat-val" style="color: var(--red-text);" id="stat-salah-count">0</div><div class="stat-label">Salah</div></div>
+          <div class="stat-box"><div class="stat-val" style="color: var(--text-muted);" id="stat-kosong-count">0</div><div class="stat-label">Kosong</div></div>
         </div>
 
-        <!-- FILTER BAR MULTI-KRITERIA -->
+        <!-- FILTER BAR -->
         <div class="filter-bar">
           <div class="filter-group">
-            <label for="filter-set">Pilih Set Soal</label>
+            <label for="filter-set">Set Soal</label>
             <select id="filter-set" class="filter-control" onchange="renderQuestionTable()">
               <option value="ALL">Semua Set (75 Soal)</option>
-              <option value="10">Set 10 (SEAMO 2016 / TO1)</option>
-              <option value="3">Set 3 (SEAMO 2024 / TO2)</option>
-              <option value="4">Set 4 (SEAMO 2017 / TO3)</option>
+              <option value="10">Set 10 (TO1)</option>
+              <option value="3">Set 3 (TO2)</option>
+              <option value="4">Set 4 (TO3)</option>
             </select>
           </div>
-
-          <div class="filter-group">
-            <label for="filter-topik">Topik</label>
-            <select id="filter-topik" class="filter-control" onchange="renderQuestionTable()">
-              <option value="ALL">Semua Topik</option>
-            </select>
-          </div>
-
           <div class="filter-group">
             <label for="filter-status">Hasil Jawaban</label>
             <select id="filter-status" class="filter-control" onchange="renderQuestionTable()">
@@ -629,20 +1117,9 @@
               <option value="KOSONG">⚪ KOSONG</option>
             </select>
           </div>
-
-          <div class="filter-group">
-            <label for="filter-level">Level / Bagian</label>
-            <select id="filter-level" class="filter-control" onchange="renderQuestionTable()">
-              <option value="ALL">Semua Level</option>
-              <option value="1">Level 1 (Bagian A - Easy)</option>
-              <option value="2">Level 2 (Bagian B - Medium)</option>
-              <option value="3">Level 3 (Bagian C - Hard)</option>
-            </select>
-          </div>
-
           <div class="filter-group" style="flex: 2 1 200px;">
-            <label for="filter-search">Cari Kata Kunci</label>
-            <input type="text" id="filter-search" class="filter-control" placeholder="Cari isi ringkasan / sub-topik..." oninput="renderQuestionTable()" />
+            <label for="filter-search">Pencarian Kata Kunci</label>
+            <input type="text" id="filter-search" class="filter-control" placeholder="Cari topik / ringkasan..." oninput="renderQuestionTable()" />
           </div>
         </div>
 
@@ -669,122 +1146,102 @@
 
   </main>
 
-  <!-- ==========================================================================
-       DATASET & JAVASCRIPT LOGIC
-       ========================================================================== -->
+  <!-- JAVASCRIPT LOGIC -->
   <script>
-    // 1. DATASET 75 SOAL LENGKAP
     const rawQuestionsData = [
-      // SET 10 (SEAMO 2016)
+      // SET 10
       { set: 10, source: "SEAMO 2016", no: 1, summary: "Pola angka kotak-lingkaran (3 diagram), cari nilai hilang", topic: "Multiplication", subtopic: "Formula Tersembunyi dalam Diagram", level: 1, answer: "BENAR" },
       { set: 10, source: "SEAMO 2016", no: 2, summary: "Hitung jumlah segitiga dalam grid segitiga besar", topic: "Counting", subtopic: "Bentuk 2D dalam Gambar", level: 1, answer: "BENAR" },
       { set: 10, source: "SEAMO 2016", no: 3, summary: "Vanessa bentuk segitiga koin, 6 koin/sisi, 3 sudut dipakai bersama, cari total koin", topic: "Logic", subtopic: "Soal Jebakan Berpikir (Trap/Off-by-One)", level: 1, answer: "KOSONG" },
       { set: 10, source: "SEAMO 2016", no: 4, summary: "Hasil dari 50×101", topic: "Multiplication", subtopic: "Perkalian & Faktorisasi Langsung", level: 1, answer: "BENAR" },
       { set: 10, source: "SEAMO 2016", no: 5, summary: "Jumlah 2 bilangan=80, selisih=12, cari bilangan lebih besar", topic: "Working Backwards", subtopic: "Jumlah & Selisih Dua Bilangan", level: 1, answer: "KOSONG" },
-      { set: 10, source: "SEAMO 2016", no: 6, summary: "Jumlah dari 1+2+3+4+⋯+18+19+20", topic: "Sum of a Number Sequence", subtopic: "Jumlah Deret Berurutan/Menurun", level: 1, answer: "SALAH" },
-      { set: 10, source: "SEAMO 2016", no: 7, summary: "Berapa ubin diperlukan untuk menutupi area (pola papan catur+ubin T)", topic: "Area and Perimeter", subtopic: "Menutupi Area dengan Satuan (Tiling)", level: 1, answer: "SALAH" },
+      { set: 10, source: "SEAMO 2016", no: 6, summary: "Jumlah dari 1+2+3+4+⋯+18+19+20", topic: "Sum of Sequence", subtopic: "Jumlah Deret Berurutan/Menurun", level: 1, answer: "SALAH" },
+      { set: 10, source: "SEAMO 2016", no: 7, summary: "Berapa ubin diperlukan untuk menutupi area", topic: "Area & Perimeter", subtopic: "Tiling", level: 1, answer: "SALAH" },
       { set: 10, source: "SEAMO 2016", no: 8, summary: "Grid bilangan 5 baris (A-E), cari baris tempat angka 47 berada", topic: "Number Pattern", subtopic: "Pola dalam Grid/Array 2D", level: 1, answer: "BENAR" },
-      { set: 10, source: "SEAMO 2016", no: 9, summary: "Jumlah dari 2+22+222+2222+22222", topic: "Addition and Subtraction", subtopic: "Operasi Berantai Berpola", level: 1, answer: "BENAR" },
-      { set: 10, source: "SEAMO 2016", no: 10, summary: "Bunga 6 kelopak, minimum warna agar kelopak bersebelahan tak sama warna", topic: "Logic", subtopic: "Penalaran Deduktif Lainnya", level: 1, answer: "KOSONG" },
+      { set: 10, source: "SEAMO 2016", no: 9, summary: "Jumlah dari 2+22+222+2222+22222", topic: "Addition/Subtraction", subtopic: "Operasi Berantai Berpola", level: 1, answer: "BENAR" },
+      { set: 10, source: "SEAMO 2016", no: 10, summary: "Bunga 6 kelopak, minimum warna agar kelopak bersebelahan tak sama warna", topic: "Logic", subtopic: "Penalaran Deduktif", level: 1, answer: "KOSONG" },
       { set: 10, source: "SEAMO 2016", no: 11, summary: "Durasi pesta Jennifer dari 2 jam yang ditampilkan, cari dalam menit", topic: "Time", subtopic: "Selisih/Durasi Waktu", level: 2, answer: "BENAR" },
-      { set: 10, source: "SEAMO 2016", no: 12, summary: "20 jeruk ke 3 keranjang, tiap keranjang jumlah genap, berapa cara", topic: "Counting", subtopic: "Kombinasi/Cara (Combinatorics)", level: 2, answer: "SALAH" },
-      { set: 10, source: "SEAMO 2016", no: 13, summary: "Uncle Sam antar paket A ke B, gerakan hanya ↑ dan →, hitung jumlah cara", topic: "Shortest Path", subtopic: "Lintasan pada Grid Persegi", level: 2, answer: "KOSONG" },
-      { set: 10, source: "SEAMO 2016", no: 14, summary: "Pola titik (Figure 1,2,3), cari jumlah titik di Figure 5", topic: "Number Pattern", subtopic: "Pola Titik/Gambar Bertumbuh", level: 2, answer: "BENAR" },
-      { set: 10, source: "SEAMO 2016", no: 15, summary: "Jane menulis semua bilangan 1-59, hitung total digit yang ditulis", topic: "Counting", subtopic: "Digit dalam Deret Tulisan", level: 2, answer: "SALAH" },
-      { set: 10, source: "SEAMO 2016", no: 16, summary: "File 70¢, Akshta punya 5×10¢, 3×20¢, 1×50¢, berapa cara bayar pas tanpa kembalian", topic: "Counting", subtopic: "Kombinasi/Cara (Combinatorics)", level: 2, answer: "KOSONG" },
-      { set: 10, source: "SEAMO 2016", no: 17, summary: "Cari bilangan hilang (Fibonacci): 1, 1, 2, 3, 5, 8, 13, ( ), 34, 55", topic: "Number Pattern", subtopic: "Deret Bertingkat/Rekursif", level: 2, answer: "BENAR" },
-      { set: 10, source: "SEAMO 2016", no: 18, summary: "Papan panah bernomor, minimum lemparan untuk skor tepat 100", topic: "Counting", subtopic: "Kombinasi/Cara (Combinatorics)", level: 2, answer: "SALAH" },
+      { set: 10, source: "SEAMO 2016", no: 12, summary: "20 jeruk ke 3 keranjang, tiap keranjang jumlah genap, berapa cara", topic: "Counting", subtopic: "Kombinasi/Cara", level: 2, answer: "SALAH" },
+      { set: 10, source: "SEAMO 2016", no: 13, summary: "Uncle Sam antar paket A ke B, gerakan hanya ↑ dan →", topic: "Shortest Path", subtopic: "Lintasan Grid", level: 2, answer: "KOSONG" },
+      { set: 10, source: "SEAMO 2016", no: 14, summary: "Pola titik (Figure 1,2,3), cari jumlah titik di Figure 5", topic: "Number Pattern", subtopic: "Pola Gambar Bertumbuh", level: 2, answer: "BENAR" },
+      { set: 10, source: "SEAMO 2016", no: 15, summary: "Jane menulis semua bilangan 1-59, hitung total digit yang ditulis", topic: "Counting", subtopic: "Digit Deret Tulisan", level: 2, answer: "SALAH" },
+      { set: 10, source: "SEAMO 2016", no: 16, summary: "File 70¢, Akshta punya 5×10¢, 3×20¢, 1×50¢, berapa cara bayar pas", topic: "Counting", subtopic: "Kombinasi/Cara", level: 2, answer: "KOSONG" },
+      { set: 10, source: "SEAMO 2016", no: 17, summary: "Cari bilangan hilang (Fibonacci): 1, 1, 2, 3, 5, 8, 13, ( ), 34, 55", topic: "Number Pattern", subtopic: "Deret Rekursif", level: 2, answer: "BENAR" },
+      { set: 10, source: "SEAMO 2016", no: 18, summary: "Papan panah bernomor, minimum lemparan untuk skor tepat 100", topic: "Counting", subtopic: "Kombinasi/Cara", level: 2, answer: "SALAH" },
       { set: 10, source: "SEAMO 2016", no: 19, summary: "Bilangan dikurangi 8, ×5, +8=48, cari bilangan awal", topic: "Working Backwards", subtopic: "Rantai Operasi Terbalik", level: 2, answer: "KOSONG" },
       { set: 10, source: "SEAMO 2016", no: 20, summary: "Sistem simbol (□+◆=36, □+●=40, ◆+●=52), cari nilai ●", topic: "Logic", subtopic: "Sistem Persamaan Simbol", level: 2, answer: "KOSONG" },
-      { set: 10, source: "SEAMO 2016", no: 21, summary: "Maksimum potongan pizza dengan 3 sayatan lurus", topic: "Counting", subtopic: "Kombinasi/Cara (Combinatorics)", level: 3, answer: "KOSONG" },
-      { set: 10, source: "SEAMO 2016", no: 22, summary: "17 ayam & kelinci, total 52 kaki, cari jumlah ayam", topic: "Working Backwards", subtopic: "Ayam-Kelinci (Metode Andaian)", level: 3, answer: "BENAR" },
-      { set: 10, source: "SEAMO 2016", no: 23, summary: "Shaun 60m/menit, Tim 55m/menit & unggul 35m, berapa menit Shaun susul Tim", topic: "Simple Speed", subtopic: "Mengejar Searah", level: 3, answer: "KOSONG" },
-      { set: 10, source: "SEAMO 2016", no: 24, summary: "Hitung \"pasangan bersahabat\" (lingkaran bersentuhan) dalam susunan segitiga", topic: "Counting", subtopic: "Bentuk 2D dalam Gambar", level: 3, answer: "SALAH" },
-      { set: 10, source: "SEAMO 2016", no: 25, summary: "5 biru, 4 oranye, 2 kuning; minimum ambil agar pasti dapat 4 warna sama", topic: "Pigeonhole Principle", subtopic: "Jaminan N Barang Sejenis", level: 3, answer: "KOSONG" },
+      { set: 10, source: "SEAMO 2016", no: 21, summary: "Maksimum potongan pizza dengan 3 sayatan lurus", topic: "Counting", subtopic: "Kombinasi/Cara", level: 3, answer: "KOSONG" },
+      { set: 10, source: "SEAMO 2016", no: 22, summary: "17 ayam & kelinci, total 52 kaki, cari jumlah ayam", topic: "Working Backwards", subtopic: "Ayam-Kelinci", level: 3, answer: "BENAR" },
+      { set: 10, source: "SEAMO 2016", no: 23, summary: "Shaun 60m/menit, Tim 55m/menit & unggul 35m, berapa menit susul", topic: "Simple Speed", subtopic: "Mengejar Searah", level: 3, answer: "KOSONG" },
+      { set: 10, source: "SEAMO 2016", no: 24, summary: "Hitung pasangan bersahabat (lingkaran bersentuhan)", topic: "Counting", subtopic: "Bentuk 2D", level: 3, answer: "SALAH" },
+      { set: 10, source: "SEAMO 2016", no: 25, summary: "5 biru, 4 oranye, 2 kuning; min ambil agar pasti dapat 4 warna sama", topic: "Pigeonhole Principle", subtopic: "Jaminan Barang Sejenis", level: 3, answer: "KOSONG" },
 
-      // SET 3 (SEAMO 2024)
-      { set: 3, source: "SEAMO 2024", no: 1, summary: "Pola kotak angka: (1,2,36,1,2), (4,3,100,2,1), (3,1,?,2,5)", topic: "Multiplication", subtopic: "Formula Tersembunyi dalam Diagram", level: 1, answer: "KOSONG" },
+      // SET 3
+      { set: 3, source: "SEAMO 2024", no: 1, summary: "Pola kotak angka: (1,2,36,1,2), (4,3,100,2,1), (3,1,?,2,5)", topic: "Multiplication", subtopic: "Formula Tersembunyi Diagram", level: 1, answer: "KOSONG" },
       { set: 3, source: "SEAMO 2024", no: 2, summary: "32÷4×(3−n)=8, cari nilai n", topic: "Working Backwards", subtopic: "Rantai Operasi Terbalik", level: 1, answer: "KOSONG" },
-      { set: 3, source: "SEAMO 2024", no: 3, summary: "Diagram berikutnya: pola kotak bayangan diagonal berputar", topic: "IQ", subtopic: "Pola Berurutan (What Comes Next)", level: 1, answer: "BENAR" },
-      { set: 3, source: "SEAMO 2024", no: 4, summary: "10 pot bunga berjarak 2 m, cari panjang koridor", topic: "Multiplication", subtopic: "Perkalian & Faktorisasi Langsung", level: 1, answer: "BENAR" },
-      { set: 3, source: "SEAMO 2024", no: 5, summary: "Pola operasi ⊙: 3⊙1=8, 6⊙7=29, 4⊙3=13, cari 5⊙4", topic: "Multiplication", subtopic: "Operasi Custom/Tersembunyi (a∗b=c)", level: 1, answer: "SALAH" },
-      { set: 3, source: "SEAMO 2024", no: 6, summary: "Nilai dari 23+91−50−60+9+77", topic: "Addition and Subtraction", subtopic: "Operasi Berantai Berpola", level: 1, answer: "BENAR" },
-      { set: 3, source: "SEAMO 2024", no: 7, summary: "Pola angka segitiga: (6,7,11), (5,8,3), (9,5,?)", topic: "Multiplication", subtopic: "Formula Tersembunyi dalam Diagram", level: 1, answer: "BENAR" },
-      { set: 3, source: "SEAMO 2024", no: 8, summary: "14 anak, perempuan 4 balon & laki-laki 2 balon, total 44 balon, cari jml perempuan", topic: "Working Backwards", subtopic: "Sistem 2 Kondisi/Skenario", level: 1, answer: "KOSONG" },
+      { set: 3, source: "SEAMO 2024", no: 3, summary: "Diagram berikutnya: pola kotak bayangan diagonal berputar", topic: "IQ", subtopic: "Pola Berurutan", level: 1, answer: "BENAR" },
+      { set: 3, source: "SEAMO 2024", no: 4, summary: "10 pot bunga berjarak 2 m, cari panjang koridor", topic: "Multiplication", subtopic: "Perkalian Langsung", level: 1, answer: "BENAR" },
+      { set: 3, source: "SEAMO 2024", no: 5, summary: "Pola operasi ⊙: 3⊙1=8, 6⊙7=29, 4⊙3=13, cari 5⊙4", topic: "Multiplication", subtopic: "Operasi Custom", level: 1, answer: "SALAH" },
+      { set: 3, source: "SEAMO 2024", no: 6, summary: "Nilai dari 23+91−50−60+9+77", topic: "Addition/Subtraction", subtopic: "Operasi Berantai", level: 1, answer: "BENAR" },
+      { set: 3, source: "SEAMO 2024", no: 7, summary: "Pola angka segitiga: (6,7,11), (5,8,3), (9,5,?)", topic: "Multiplication", subtopic: "Formula Tersembunyi Diagram", level: 1, answer: "BENAR" },
+      { set: 3, source: "SEAMO 2024", no: 8, summary: "14 anak, perempuan 4 balon & laki-laki 2 balon, total 44 balon", topic: "Working Backwards", subtopic: "Sistem 2 Skenario", level: 1, answer: "KOSONG" },
       { set: 3, source: "SEAMO 2024", no: 9, summary: "Shawn 8 th, ibu 33 th, berapa tahun lagi jumlah usia = 57", topic: "Working Backwards", subtopic: "Soal Usia", level: 1, answer: "KOSONG" },
-      { set: 3, source: "SEAMO 2024", no: 10, summary: "Array segitiga bilangan (baris berurutan), cari angka terakhir baris ke-12", topic: "Number Pattern", subtopic: "Pola dalam Grid/Array 2D", level: 1, answer: "KOSONG" },
-      { set: 3, source: "SEAMO 2024", no: 11, summary: "Diagram berikutnya: pola titik & bentuk dalam kotak", topic: "IQ", subtopic: "Pola Berurutan (What Comes Next)", level: 2, answer: "KOSONG" },
-      { set: 3, source: "SEAMO 2024", no: 12, summary: "12 Maret 2022 = Sabtu, cari hari 5 April tahun sama", topic: "Logic", subtopic: "Kalender/Hari dalam Seminggu", level: 2, answer: "BENAR" },
-      { set: 3, source: "SEAMO 2024", no: 13, summary: "Penjumlahan 3 grid kotak berwarna, cari hasil gabungan", topic: "IQ", subtopic: "Operasi Visual (Kombinasi Gambar)", level: 2, answer: "BENAR" },
-      { set: 3, source: "SEAMO 2024", no: 14, summary: "Guru bagi 10 permen/anak sisa 3, 11 permen/anak kurang 2, cari total permen", topic: "Working Backwards", subtopic: "Sistem 2 Kondisi/Skenario", level: 2, answer: "KOSONG" },
-      { set: 3, source: "SEAMO 2024", no: 15, summary: "Nilai dari 1+2+3+⋯+9+10+9+⋯+3+2+1", topic: "Sum of a Number Sequence", subtopic: "Jumlah Deret Simetris/Palindrom", level: 2, answer: "KOSONG" },
-      { set: 3, source: "SEAMO 2024", no: 16, summary: "Cari figur hilang: pola susunan kubus 3D menurun", topic: "IQ", subtopic: "Pola Berurutan (What Comes Next)", level: 2, answer: "SALAH" },
-      { set: 3, source: "SEAMO 2024", no: 17, summary: "5 merah, 4 hijau, 2 kuning, 1 putih; min ambil agar pasti dapat 3 warna sama", topic: "Pigeonhole Principle", subtopic: "Jaminan N Barang Sejenis", level: 2, answer: "KOSONG" },
-      { set: 3, source: "SEAMO 2024", no: 18, summary: "Cari figur hilang: pola kotak/lingkaran/belah ketupat 3×3", topic: "IQ", subtopic: "Pola Matriks 3×3 (Analogi Baris-Kolom)", level: 2, answer: "BENAR" },
-      { set: 3, source: "SEAMO 2024", no: 19, summary: "Grid lingkaran angka (41,37,53 / 38,31,44 / 26,16,?)", topic: "Number Pattern", subtopic: "Pola dalam Grid/Array 2D", level: 2, answer: "KOSONG" },
-      { set: 3, source: "SEAMO 2024", no: 20, summary: "Jumlah lintasan terpendek A ke B pada grid berbentuk tangga", topic: "Shortest Path", subtopic: "Lintasan pada Grid Persegi", level: 2, answer: "KOSONG" },
-      { set: 3, source: "SEAMO 2024", no: 21, summary: "n dibagi 5 sisa 4, dibagi 3 sisa 2, dibagi 2 sisa 1, 50<n<60, cari n", topic: "Number Pattern", subtopic: "Pola Sisa Bagi/Keterbagian", level: 3, answer: "KOSONG" },
-      { set: 3, source: "SEAMO 2024", no: 22, summary: "Timbangan: cari massa 1 nanas dari 3 persamaan keseimbangan", topic: "Logic", subtopic: "Timbangan/Perbandingan Berat & Rasio", level: 3, answer: "BENAR" },
-      { set: 3, source: "SEAMO 2024", no: 23, summary: "2 kereta jarak 840 km, kecepatan A=52 km/jam, bertemu 8 jam kemudian, cari kecepatan B", topic: "Simple Speed", subtopic: "Bertemu Berlawanan Arah", level: 3, answer: "KOSONG" },
-      { set: 3, source: "SEAMO 2024", no: 24, summary: "Hitung jumlah segitiga dalam gambar (garis-garis dari titik A)", topic: "Counting", subtopic: "Bentuk 2D dalam Gambar", level: 3, answer: "BENAR" },
+      { set: 3, source: "SEAMO 2024", no: 10, summary: "Array segitiga bilangan, cari angka terakhir baris ke-12", topic: "Number Pattern", subtopic: "Grid 2D", level: 1, answer: "KOSONG" },
+      { set: 3, source: "SEAMO 2024", no: 11, summary: "Diagram berikutnya: pola titik & bentuk dalam kotak", topic: "IQ", subtopic: "Pola Berurutan", level: 2, answer: "KOSONG" },
+      { set: 3, source: "SEAMO 2024", no: 12, summary: "12 Maret 2022 = Sabtu, cari hari 5 April tahun sama", topic: "Logic", subtopic: "Kalender", level: 2, answer: "BENAR" },
+      { set: 3, source: "SEAMO 2024", no: 13, summary: "Penjumlahan 3 grid kotak berwarna, cari hasil gabungan", topic: "IQ", subtopic: "Operasi Visual", level: 2, answer: "BENAR" },
+      { set: 3, source: "SEAMO 2024", no: 14, summary: "Guru bagi 10 permen/anak sisa 3, 11 permen/anak kurang 2", topic: "Working Backwards", subtopic: "Sistem 2 Skenario", level: 2, answer: "KOSONG" },
+      { set: 3, source: "SEAMO 2024", no: 15, summary: "Nilai dari 1+2+3+⋯+9+10+9+⋯+3+2+1", topic: "Sum of Sequence", subtopic: "Deret Simetris", level: 2, answer: "KOSONG" },
+      { set: 3, source: "SEAMO 2024", no: 16, summary: "Cari figur hilang: pola susunan kubus 3D menurun", topic: "IQ", subtopic: "Pola Berurutan 3D", level: 2, answer: "SALAH" },
+      { set: 3, source: "SEAMO 2024", no: 17, summary: "5 merah, 4 hijau, 2 kuning, 1 putih; min ambil pasti 3 sama", topic: "Pigeonhole Principle", subtopic: "Jaminan Barang Sejenis", level: 2, answer: "KOSONG" },
+      { set: 3, source: "SEAMO 2024", no: 18, summary: "Cari figur hilang: pola kotak/lingkaran/belah ketupat 3×3", topic: "IQ", subtopic: "Matriks 3×3", level: 2, answer: "BENAR" },
+      { set: 3, source: "SEAMO 2024", no: 19, summary: "Grid lingkaran angka (41,37,53 / 38,31,44 / 26,16,?)", topic: "Number Pattern", subtopic: "Grid 2D", level: 2, answer: "KOSONG" },
+      { set: 3, source: "SEAMO 2024", no: 20, summary: "Jumlah lintasan terpendek A ke B pada grid berbentuk tangga", topic: "Shortest Path", subtopic: "Lintasan Grid", level: 2, answer: "KOSONG" },
+      { set: 3, source: "SEAMO 2024", no: 21, summary: "n dibagi 5 sisa 4, dibagi 3 sisa 2, dibagi 2 sisa 1", topic: "Number Pattern", subtopic: "Pola Sisa Bagi", level: 3, answer: "KOSONG" },
+      { set: 3, source: "SEAMO 2024", no: 22, summary: "Timbangan: cari massa 1 nanas dari 3 persamaan", topic: "Logic", subtopic: "Timbangan", level: 3, answer: "BENAR" },
+      { set: 3, source: "SEAMO 2024", no: 23, summary: "2 kereta jarak 840 km, kecepatan A=52 km/jam, bertemu 8 jam", topic: "Simple Speed", subtopic: "Bertemu Berlawanan", level: 3, answer: "KOSONG" },
+      { set: 3, source: "SEAMO 2024", no: 24, summary: "Hitung jumlah segitiga dalam gambar (garis dari titik A)", topic: "Counting", subtopic: "Bentuk 2D", level: 3, answer: "BENAR" },
       { set: 3, source: "SEAMO 2024", no: 25, summary: "7 ditambah m, ×7, −7, hasil ÷7=7, cari nilai m", topic: "Working Backwards", subtopic: "Rantai Operasi Terbalik", level: 3, answer: "BENAR" },
 
-      // SET 4 (SEAMO 2017)
-      { set: 4, source: "SEAMO 2017", no: 1, summary: "Timbangan: A+B=50g, A+C=60g, B+C=70g, cari massa B", topic: "Logic", subtopic: "Timbangan/Perbandingan Berat & Rasio", level: 1, answer: "SALAH" },
-      { set: 4, source: "SEAMO 2017", no: 2, summary: "Jumlah dari 3+5+7+9+11+13+15+17+19", topic: "Sum of a Number Sequence", subtopic: "Jumlah Bilangan Khusus", level: 1, answer: "BENAR" },
-      { set: 4, source: "SEAMO 2017", no: 3, summary: "⊡+⊙=12, ⊙×6=42, cari nilai ⊡", topic: "Logic", subtopic: "Sistem Persamaan Simbol", level: 1, answer: "SALAH" },
-      { set: 4, source: "SEAMO 2017", no: 4, summary: "Shawn 1 menit dari lantai 1 ke 2, berapa menit ke lantai 8", topic: "Logic", subtopic: "Soal Jebakan Berpikir (Trap/Off-by-One)", level: 1, answer: "SALAH" },
-      { set: 4, source: "SEAMO 2017", no: 5, summary: "John potong kue, maksimum potongan dengan 3 sayatan", topic: "Counting", subtopic: "Kombinasi/Cara (Combinatorics)", level: 1, answer: "KOSONG" },
-      { set: 4, source: "SEAMO 2017", no: 6, summary: "2 jam, hitung selisih menit dari posisi jarum jam", topic: "Time", subtopic: "Selisih/Durasi Waktu", level: 1, answer: "KOSONG" },
-      { set: 4, source: "SEAMO 2017", no: 7, summary: "Figur mana yang bisa digambar tanpa mengangkat pena/mengulang garis", topic: "Logic", subtopic: "Menelusuri Gambar Tanpa Mengangkat Pena", level: 1, answer: "KOSONG" },
-      { set: 4, source: "SEAMO 2017", no: 8, summary: "Minimum jumlah kubus dalam figur 3D bertingkat", topic: "Counting", subtopic: "Objek 3D (Kubus)", level: 1, answer: "SALAH" },
-      { set: 4, source: "SEAMO 2017", no: 9, summary: "31 penumpang bus, naik-turun di 2 halte, sisa penumpang sekarang", topic: "Addition and Subtraction", subtopic: "Soal Cerita Sisa/Total", level: 1, answer: "KOSONG" },
-      { set: 4, source: "SEAMO 2017", no: 10, summary: "20 anak antre, Ali ke-8 dari depan, Emma ke-6 dari belakang, cari jumlah di antara mereka", topic: "Queuing Problem", subtopic: "Posisi Linear dalam Antrian", level: 1, answer: "SALAH" },
-      { set: 4, source: "SEAMO 2017", no: 11, summary: "31 hari Januari, 5 Jan = Jumat, cari hari 28 Januari", topic: "Logic", subtopic: "Kalender/Hari dalam Seminggu", level: 2, answer: "BENAR" },
-      { set: 4, source: "SEAMO 2017", no: 12, summary: "Cari bilangan hilang: 1, 2, 3, 5, 8, 13, 21, ( )", topic: "Number Pattern", subtopic: "Deret Bertingkat/Rekursif", level: 2, answer: "BENAR" },
-      { set: 4, source: "SEAMO 2017", no: 13, summary: "Pola operasi ⊕: 2⊕3=13, 2⊕4=20, cari 3⊕4", topic: "Multiplication", subtopic: "Operasi Custom/Tersembunyi (a∗b=c)", level: 2, answer: "KOSONG" },
-      { set: 4, source: "SEAMO 2017", no: 14, summary: "Jumlah A+B=36, selisih A−B=8, cari A (bilangan lebih besar)", topic: "Working Backwards", subtopic: "Jumlah & Selisih Dua Bilangan", level: 2, answer: "BENAR" },
-      { set: 4, source: "SEAMO 2017", no: 15, summary: "Hashima $22, Mingyi $10, berapa yang harus diberikan agar Hashima 3× lipat Mingyi", topic: "Working Backwards", subtopic: "Transfer/Menyamakan (Equalizing)", level: 2, answer: "KOSONG" },
-      { set: 4, source: "SEAMO 2017", no: 16, summary: "Pola 4 figur (bentuk bersarang berputar warna), cari figur ke-4", topic: "IQ", subtopic: "Pola Berurutan (What Comes Next)", level: 2, answer: "SALAH" },
-      { set: 4, source: "SEAMO 2017", no: 17, summary: "Halima menulis angka 1 sampai 65, hitung total digit yang ditulis", topic: "Counting", subtopic: "Digit dalam Deret Tulisan", level: 2, answer: "KOSONG" },
-      { set: 4, source: "SEAMO 2017", no: 18, summary: "5 bunga tiap sisi sapu tangan persegi, bunga di tiap sudut, total bunga", topic: "Logic", subtopic: "Soal Jebakan Berpikir (Trap/Off-by-One)", level: 2, answer: "KOSONG" },
+      // SET 4
+      { set: 4, source: "SEAMO 2017", no: 1, summary: "Timbangan: A+B=50g, A+C=60g, B+C=70g, cari massa B", topic: "Logic", subtopic: "Timbangan 3 Persamaan", level: 1, answer: "SALAH" },
+      { set: 4, source: "SEAMO 2017", no: 2, summary: "Jumlah dari 3+5+7+9+11+13+15+17+19", topic: "Sum of Sequence", subtopic: "Jumlah Bilangan Khusus", level: 1, answer: "BENAR" },
+      { set: 4, source: "SEAMO 2017", no: 3, summary: "⊡+⊙=12, ⊙×6=42, cari nilai ⊡", topic: "Logic", subtopic: "Persamaan Simbol", level: 1, answer: "SALAH" },
+      { set: 4, source: "SEAMO 2017", no: 4, summary: "Shawn 1 menit dari lantai 1 ke 2, berapa menit ke lantai 8", topic: "Logic", subtopic: "Jebakan Lantai", level: 1, answer: "SALAH" },
+      { set: 4, source: "SEAMO 2017", no: 5, summary: "John potong kue, maksimum potongan dengan 3 sayatan", topic: "Counting", subtopic: "Maks Potongan Kue", level: 1, answer: "KOSONG" },
+      { set: 4, source: "SEAMO 2017", no: 6, summary: "2 jam, hitung selisih menit dari posisi jarum jam", topic: "Time", subtopic: "Selisih Waktu", level: 1, answer: "KOSONG" },
+      { set: 4, source: "SEAMO 2017", no: 7, summary: "Figur mana yang bisa digambar tanpa mengangkat pena", topic: "Logic", subtopic: "Jalur Tanpa Putus", level: 1, answer: "KOSONG" },
+      { set: 4, source: "SEAMO 2017", no: 8, summary: "Minimum jumlah kubus dalam figur 3D bertingkat", topic: "Counting", subtopic: "Objek 3D", level: 1, answer: "SALAH" },
+      { set: 4, source: "SEAMO 2017", no: 9, summary: "31 penumpang bus, naik-turun di 2 halte, sisa penumpang", topic: "Addition/Subtraction", subtopic: "Soal Cerita Sisa", level: 1, answer: "KOSONG" },
+      { set: 4, source: "SEAMO 2017", no: 10, summary: "20 anak antre, Ali ke-8 dari depan, Emma ke-6 dari belakang", topic: "Queuing Problem", subtopic: "Jumlah Di Antara", level: 1, answer: "SALAH" },
+      { set: 4, source: "SEAMO 2017", no: 11, summary: "31 hari Januari, 5 Jan = Jumat, cari hari 28 Januari", topic: "Logic", subtopic: "Kalender", level: 2, answer: "BENAR" },
+      { set: 4, source: "SEAMO 2017", no: 12, summary: "Cari bilangan hilang: 1, 2, 3, 5, 8, 13, 21, ( )", topic: "Number Pattern", subtopic: "Deret Bertingkat", level: 2, answer: "BENAR" },
+      { set: 4, source: "SEAMO 2017", no: 13, summary: "Pola operasi ⊕: 2⊕3=13, 2⊕4=20, cari 3⊕4", topic: "Multiplication", subtopic: "Operasi Custom ⊕", level: 2, answer: "KOSONG" },
+      { set: 4, source: "SEAMO 2017", no: 14, summary: "Jumlah A+B=36, selisih A−B=8, cari A", topic: "Working Backwards", subtopic: "Jumlah & Selisih", level: 2, answer: "BENAR" },
+      { set: 4, source: "SEAMO 2017", no: 15, summary: "Hashima $22, Mingyi $10, berapa agar Hashima 3× Mingyi", topic: "Working Backwards", subtopic: "Transfer", level: 2, answer: "KOSONG" },
+      { set: 4, source: "SEAMO 2017", no: 16, summary: "Pola 4 figur (bentuk bersarang berputar warna), cari ke-4", topic: "IQ", subtopic: "Pola Berurutan", level: 2, answer: "SALAH" },
+      { set: 4, source: "SEAMO 2017", no: 17, summary: "Halima menulis angka 1 sampai 65, hitung total digit", topic: "Counting", subtopic: "Digit Deret Tulisan", level: 2, answer: "KOSONG" },
+      { set: 4, source: "SEAMO 2017", no: 18, summary: "5 bunga tiap sisi sapu tangan persegi, bunga di tiap sudut", topic: "Logic", subtopic: "Jebakan Sudut", level: 2, answer: "KOSONG" },
       { set: 4, source: "SEAMO 2017", no: 19, summary: "⊙+⊙+⊙=15, ⊡+⊡+⊡=18, △+△+△=12, cari △+⊡+⊙", topic: "Logic", subtopic: "Sistem Persamaan Simbol", level: 2, answer: "BENAR" },
-      { set: 4, source: "SEAMO 2017", no: 20, summary: "Hitung jumlah segitiga dalam figur grid segitiga trapesium", topic: "Counting", subtopic: "Bentuk 2D dalam Gambar", level: 2, answer: "BENAR" },
-      { set: 4, source: "SEAMO 2017", no: 21, summary: "14 anak, laki-laki 2 balon & perempuan 3 balon, total 36 balon, cari jml perempuan", topic: "Working Backwards", subtopic: "Sistem 2 Kondisi/Skenario", level: 3, answer: "BENAR" },
-      { set: 4, source: "SEAMO 2017", no: 22, summary: "Cari nilai B dari penjumlahan AB+AB=BC", topic: "Logic", subtopic: "Kriptaritma/Puzzle Digit", level: 3, answer: "KOSONG" },
-      { set: 4, source: "SEAMO 2017", no: 23, summary: "Matthew & saudara kembar 5 th, ayah 32 th, berapa tahun lagi jumlah usia=60", topic: "Working Backwards", subtopic: "Soal Usia", level: 3, answer: "KOSONG" },
-      { set: 4, source: "SEAMO 2017", no: 24, summary: "Cari bilangan hilang pada pola lingkaran (diagonal×diagonal): (2,5,3,4→23), (6,5,4,5→50), (7,?,3,8→68)", topic: "Multiplication", subtopic: "Formula Tersembunyi dalam Diagram", level: 3, answer: "KOSONG" },
-      { set: 4, source: "SEAMO 2017", no: 25, summary: "Pasangan palindrom 2-digit berjumlah 99 (18+81=99), cari berapa pasangan lain", topic: "Number Pattern", subtopic: "Pola Bilangan Khusus", level: 3, answer: "KOSONG" }
+      { set: 4, source: "SEAMO 2017", no: 20, summary: "Hitung jumlah segitiga dalam figur grid segitiga trapesium", topic: "Counting", subtopic: "Bentuk 2D", level: 2, answer: "BENAR" },
+      { set: 4, source: "SEAMO 2017", no: 21, summary: "14 anak, laki-laki 2 balon & perempuan 3 balon, total 36", topic: "Working Backwards", subtopic: "Sistem 2 Skenario", level: 3, answer: "BENAR" },
+      { set: 4, source: "SEAMO 2017", no: 22, summary: "Cari nilai B dari penjumlahan AB+AB=BC", topic: "Logic", subtopic: "Kriptaritma", level: 3, answer: "KOSONG" },
+      { set: 4, source: "SEAMO 2017", no: 23, summary: "Matthew & saudara kembar 5 th, ayah 32 th, berapa tahun lagi", topic: "Working Backwards", subtopic: "Soal Usia", level: 3, answer: "KOSONG" },
+      { set: 4, source: "SEAMO 2017", no: 24, summary: "Cari bilangan hilang pola (diagonal×diagonal)", topic: "Multiplication", subtopic: "Formula Diagram Silang", level: 3, answer: "KOSONG" },
+      { set: 4, source: "SEAMO 2017", no: 25, summary: "Pasangan palindrom 2-digit berjumlah 99 (18+81=99)", topic: "Number Pattern", subtopic: "Subtipe Palindrom Baru", level: 3, answer: "KOSONG" }
     ];
 
     let currentMainPage = 'home';
     let currentSubTab = 'parent';
 
-    // Populate Topik Filter Dropdown
-    function initTopicFilterOptions() {
-      const topicSelect = document.getElementById('filter-topik');
-      const topics = Array.from(new Set(rawQuestionsData.map(q => q.topic))).sort();
-      topics.forEach(t => {
-        const opt = document.createElement('option');
-        opt.value = t;
-        opt.textContent = t;
-        topicSelect.appendChild(opt);
-      });
-    }
-
-    // Render Detailed Table based on Active Filters
     function renderQuestionTable() {
       const setVal = document.getElementById('filter-set').value;
-      const topicVal = document.getElementById('filter-topik').value;
       const statusVal = document.getElementById('filter-status').value;
-      const levelVal = document.getElementById('filter-level').value;
       const searchVal = document.getElementById('filter-search').value.toLowerCase().trim();
 
       const filtered = rawQuestionsData.filter(q => {
         if (setVal !== 'ALL' && q.set.toString() !== setVal) return false;
-        if (topicVal !== 'ALL' && q.topic !== topicVal) return false;
         if (statusVal !== 'ALL' && q.answer !== statusVal) return false;
-        if (levelVal !== 'ALL' && q.level.toString() !== levelVal) return false;
         if (searchVal !== '') {
           const matchText = (q.summary + ' ' + q.topic + ' ' + q.subtopic + ' ' + q.source).toLowerCase();
           if (!matchText.includes(searchVal)) return false;
@@ -792,7 +1249,6 @@
         return true;
       });
 
-      // Update Stat Counter Cards
       const totalCount = filtered.length;
       const benarCount = filtered.filter(q => q.answer === 'BENAR').length;
       const salahCount = filtered.filter(q => q.answer === 'SALAH').length;
@@ -803,36 +1259,29 @@
       document.getElementById('stat-salah-count').textContent = `${salahCount} (${totalCount ? Math.round(salahCount/totalCount*100) : 0}%)`;
       document.getElementById('stat-kosong-count').textContent = `${kosongCount} (${totalCount ? Math.round(kosongCount/totalCount*100) : 0}%)`;
 
-      // Render Rows
       const tbody = document.getElementById('questions-table-body');
       tbody.innerHTML = '';
 
       if (filtered.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted); padding: 24px;">Tidak ada soal yang cocok dengan filter.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted); padding: 24px;">Tidak ada soal yang cocok.</td></tr>`;
         return;
       }
 
       filtered.forEach(q => {
         const tr = document.createElement('tr');
-        
-        let statusBadge = '';
-        if (q.answer === 'BENAR') statusBadge = `<span class="badge badge-green">🟢 BENAR</span>`;
-        else if (q.answer === 'SALAH') statusBadge = `<span class="badge badge-red">🔴 SALAH</span>`;
-        else statusBadge = `<span class="badge badge-gray">⚪ KOSONG</span>`;
+        let statusBadge = q.answer === 'BENAR' ? `<span class="badge badge-green">🟢 BENAR</span>` :
+                          q.answer === 'SALAH' ? `<span class="badge badge-red">🔴 SALAH</span>` :
+                          `<span class="badge badge-gray">⚪ KOSONG</span>`;
 
-        let levelBadge = '';
-        if (q.level === 1) levelBadge = `<span class="badge badge-sky">Lvl 1 (A)</span>`;
-        else if (q.level === 2) levelBadge = `<span class="badge badge-mint">Lvl 2 (B)</span>`;
-        else levelBadge = `<span class="badge badge-purple">Lvl 3 (C)</span>`;
+        let levelBadge = q.level === 1 ? `<span class="badge badge-sky">Lvl 1 (A)</span>` :
+                         q.level === 2 ? `<span class="badge badge-mint">Lvl 2 (B)</span>` :
+                         `<span class="badge badge-purple">Lvl 3 (C)</span>`;
 
         tr.innerHTML = `
           <td><strong>Set ${q.set}</strong><br/><span style="font-size:0.75rem; color: var(--text-muted);">${q.source}</span></td>
           <td><strong>No. ${q.no}</strong></td>
           <td>${levelBadge}</td>
-          <td>
-            <strong>${q.topic}</strong><br/>
-            <span style="font-size:0.8rem; color: var(--text-muted);">${q.subtopic}</span>
-          </td>
+          <td><strong>${q.topic}</strong><br/><span style="font-size:0.8rem; color: var(--text-muted);">${q.subtopic}</span></td>
           <td style="font-size:0.88rem;">${q.summary}</td>
           <td style="text-align: center;">${statusBadge}</td>
         `;
@@ -840,16 +1289,8 @@
       });
     }
 
-    // Direct link to detail page with set filter
-    function filterAndGoDetail(setNum) {
-      document.getElementById('filter-set').value = setNum;
-      switchMainPage('detail');
-    }
-
-    // Switch Main Top Pages
     function switchMainPage(pageId) {
       currentMainPage = pageId;
-
       document.querySelectorAll('.view-page').forEach(page => page.classList.remove('active'));
       document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
 
@@ -867,24 +1308,11 @@
         switchSubTab(currentSubTab);
       }
 
-      const pageTitles = {
-        'home': 'Dashboard SEAMO — Summary Hub',
-        'to1': 'Laporan TO 1 (Set 10) — SEAMO',
-        'to2': 'Laporan TO 2 (Set 3) — SEAMO',
-        'to3': 'Laporan TO 3 (Set 4) — SEAMO',
-        'detail': 'Detail 75 Soal Try Out — SEAMO'
-      };
-      document.title = pageTitles[pageId] || 'Dashboard SEAMO';
       window.location.hash = pageId;
-
-      if (pageId === 'detail') {
-        renderQuestionTable();
-      }
-
+      if (pageId === 'detail') renderQuestionTable();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Switch Sub Tabs inside TO Pages
     function switchSubTab(tabName) {
       currentSubTab = tabName;
       document.querySelectorAll('.sub-btn').forEach(btn => btn.classList.remove('active'));
@@ -898,22 +1326,39 @@
       if (activePage) {
         activePage.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
         const activeTabContent = document.getElementById(`${currentMainPage}-${tabName}`);
-        if (activeTabContent) {
-          activeTabContent.classList.add('active');
-        }
+        if (activeTabContent) activeTabContent.classList.add('active');
       }
     }
 
-    // Initial Setup
-    window.addEventListener('DOMContentLoaded', () => {
-      initTopicFilterOptions();
+    const STORAGE_KEY = 'seamo_kids_checklist_v2';
+    function loadChecklistState() {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+      Object.keys(saved).forEach(taskId => {
+        const checkbox = document.getElementById(taskId);
+        if (checkbox) {
+          checkbox.checked = saved[taskId];
+          if (saved[taskId]) checkbox.parentElement.classList.add('completed');
+        }
+      });
+    }
+
+    function toggleTask(element, taskId) {
+      const checkbox = element.querySelector('input[type="checkbox"]');
+      if (event.target !== checkbox) checkbox.checked = !checkbox.checked;
       
+      if (checkbox.checked) element.classList.add('completed');
+      else element.classList.remove('completed');
+
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+      saved[taskId] = checkbox.checked;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
       const hash = window.location.hash.replace('#', '');
-      if (['home', 'to1', 'to2', 'to3', 'detail'].includes(hash)) {
-        switchMainPage(hash);
-      } else {
-        switchMainPage('home');
-      }
+      if (['home', 'to1', 'to2', 'to3', 'detail'].includes(hash)) switchMainPage(hash);
+      else switchMainPage('home');
+      loadChecklistState();
     });
   </script>
 </body>
